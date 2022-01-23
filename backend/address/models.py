@@ -8,7 +8,8 @@ class AddressManage(models.Manager):
 
 
 class Address(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='addresses')
     city = models.CharField(max_length=50)
     zip_code = models.CharField(max_length=50)
     address_line = models.CharField(max_length=250)
